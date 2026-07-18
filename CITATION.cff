@@ -1,0 +1,29 @@
+# This CITATION.cff file was generated with cffinit.
+# Visit https://bit.ly/cffinit to generate yours today!
+
+cff-version: 1.2.0
+title: tiltr
+message: >-
+  If you use this software, please cite it using the
+  metadata from this file.
+type: software
+authors:
+  - given-names: K M Shariat
+    family-names: Ullah
+    email: cast.shariat@gmail.com
+    affiliation: Shahjalal University of Science and Technology
+    orcid: 'https://orcid.org/0000-0001-9124-1181'
+repository-code: 'https://github.com/kmshariat/tiltr/'
+abstract: >-
+  tiltr is a Python package to visualize the obliquity of
+  exoplanets in terms of different stellar and planetary
+  parameters. 
+keywords:
+  - Exoplanet
+  - Spin-Orbit Angle
+  - Astronomy
+  - Rossiter-McLaughlin effect
+  - Obliquity
+license: MIT
+version: 0.1.0
+date-released: '2026-07-18'
