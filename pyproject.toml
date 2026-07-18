@@ -1,17 +1,15 @@
-[build-system]
-requires = ["setuptools>=61.0"]
-build-backend = "setuptools.build_meta"
-
 [project]
 name = "tiltr"
 version = "0.1.0"
-description = "Fetch TEPCat data and plot obliquity"
+description = "TEPCat obliquity plotter"
 readme = "README.md"
-requires-python = ">=3.8"
-dependencies = [
-    "pandas>=1.0",
-    "matplotlib>=3.0",
+license = "MIT"
+authors = [
+    {name = "K M Shariat Ullah", email = "cast.shariat@gmail.com"}
 ]
+requires-python = ">=3.10"
 
-[tool.setuptools.packages.find]
-include = ["tiltr*"]
+dependencies = [
+    "pandas",
+    "matplotlib",
+]

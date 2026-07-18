@@ -1,0 +1,15 @@
+Metadata-Version: 2.4
+Name: tiltr
+Version: 0.1.0
+Summary: TEPCat obliquity plotter
+Author-email: K M Shariat Ullah <cast.shariat@gmail.com>
+License-Expression: MIT
+Requires-Python: >=3.10
+Description-Content-Type: text/markdown
+License-File: LICENSE
+Requires-Dist: pandas
+Requires-Dist: matplotlib
+Dynamic: license-file
+
+# tiltr
+TEPCat Obliquity Plotter
