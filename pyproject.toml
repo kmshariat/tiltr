@@ -3,9 +3,9 @@ requires = ["setuptools>=61.0"]
 build-backend = "setuptools.build_meta"
 
 [project]
-name = "tepcat_lambda_psi"
+name = "tiltr"
 version = "0.1.0"
-description = "Fetch TEPCat data and plot Lambda/Psi obliquity diagnostics vs a, e, Teff"
+description = "Fetch TEPCat data and plot obliquity"
 readme = "README.md"
 requires-python = ">=3.8"
 dependencies = [
@@ -14,4 +14,4 @@ dependencies = [
 ]
 
 [tool.setuptools.packages.find]
-include = ["tepcat_lambda_psi*"]
+include = ["tiltr*"]
