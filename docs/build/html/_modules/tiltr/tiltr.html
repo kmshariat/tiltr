@@ -1,0 +1,912 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>tiltr.tiltr &#8212; tiltr 0.2.0 documentation</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  <!--
+    this give us a css class that will be invisible only if js is disabled
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../_static/styles/theme.css?digest=90905a2f556bf617f1a9" rel="stylesheet" />
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=90905a2f556bf617f1a9" rel="stylesheet" />
+
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=8f2a1f02" />
+  
+  <!-- So that users can add custom icons -->
+  <script defer src="../../_static/scripts/fontawesome.js?digest=90905a2f556bf617f1a9"></script>
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=90905a2f556bf617f1a9" />
+<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=90905a2f556bf617f1a9" />
+
+    <script src="../../_static/documentation_options.js?v=938c9ccc"></script>
+    <script src="../../_static/doctools.js?v=fd6eb6e6"></script>
+    <script src="../../_static/sphinx_highlight.js?v=6ffebe34"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = '_modules/tiltr/tiltr';</script>
+    <script>DOCUMENTATION_OPTIONS.search_as_you_type = false;</script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="" />
+  
+    
+    <script src="../../_static/searchtools.js"></script>
+    <script src="../../_static/language_data.js"></script>
+    <script src="../../searchindex.js"></script>
+  
+  </head>
+  <body data-default-mode="">
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+  
+  
+  
+  
+  <dialog id="pst-search-dialog">
+    
+<form class="bd-search d-flex align-items-center"
+      action="../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search the docs ..."
+         aria-label="Search the docs ..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header id="pst-header" class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+<div class="bd-header__inner bd-page-width">
+  <button class="pst-navbar-icon sidebar-toggle primary-toggle" aria-label="Site navigation">
+    <span class="fa-solid fa-bars"></span>
+  </button>
+  
+  
+  <div class="col-lg-3 navbar-header-items__start">
+    
+      <div class="navbar-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../../index.html">
+  
+  
+  
+  
+  
+  
+    <p class="title logo__title">tiltr 0.2.0 documentation</p>
+  
+</a></div>
+    
+  </div>
+  
+  <div class="col-lg-9 navbar-header-items">
+    
+    <div class="me-auto navbar-header-items__center">
+      
+        <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../tiltr.html">
+    tiltr
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../fetch.html">
+    Fetch
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../plotter.html">
+    Plotter
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../core.html">
+    Core
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+      
+    </div>
+    
+    
+    <div class="navbar-header-items__end">
+      
+        <div class="navbar-item navbar-persistent--container">
+          
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+        </div>
+      
+      
+        <div class="navbar-item">
+
+<div class="theme-switch-container dropdown pst-js-only" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Color mode">
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button dropdown-toggle" aria-label="Color mode" data-bs-toggle="dropdown">
+    <i class="theme-switch fa-solid fa-sun fa-lg fa-fw" data-mode="light" title="Light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg fa-fw" data-mode="dark" title="Dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg fa-fw" data-mode="auto" title="System Settings"></i>
+  </button>
+  <ul class="dropdown-menu dropdown-menu-end">
+    <li><button class="dropdown-item d-flex align-items-center theme-change-button" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg fa-fw me-1"></i>System Settings</button></li>
+    <li><button class="dropdown-item d-flex align-items-center theme-change-button" data-mode="light"><i class="fa-solid fa-sun fa-lg fa-fw me-1"></i>Light</button></li>
+    <li><button class="dropdown-item d-flex align-items-center theme-change-button" data-mode="dark"><i class="fa-solid fa-moon fa-lg fa-fw me-1"></i>Dark</button></li>
+  </ul>
+</div></div>
+      
+    </div>
+    
+  </div>
+  
+  
+    <div class="navbar-persistent--mobile">
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+    </div>
+  
+
+  
+</div>
+
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+        
+      
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar hide-on-wide">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+      <div class="sidebar-header-items__center">
+        
+          
+          
+            <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../tiltr.html">
+    tiltr
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../fetch.html">
+    Fetch
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../plotter.html">
+    Plotter
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../core.html">
+    Core
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+          
+        
+      </div>
+    
+    
+    
+      <div class="sidebar-header-items__end">
+        
+          <div class="navbar-item">
+
+<div class="theme-switch-container dropdown pst-js-only" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Color mode">
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button dropdown-toggle" aria-label="Color mode" data-bs-toggle="dropdown">
+    <i class="theme-switch fa-solid fa-sun fa-lg fa-fw" data-mode="light" title="Light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg fa-fw" data-mode="dark" title="Dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg fa-fw" data-mode="auto" title="System Settings"></i>
+  </button>
+  <ul class="dropdown-menu dropdown-menu-end">
+    <li><button class="dropdown-item d-flex align-items-center theme-change-button" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg fa-fw me-1"></i>System Settings</button></li>
+    <li><button class="dropdown-item d-flex align-items-center theme-change-button" data-mode="light"><i class="fa-solid fa-sun fa-lg fa-fw me-1"></i>Light</button></li>
+    <li><button class="dropdown-item d-flex align-items-center theme-change-button" data-mode="dark"><i class="fa-solid fa-moon fa-lg fa-fw me-1"></i>Dark</button></li>
+  </ul>
+</div></div>
+        
+      </div>
+    
+  </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+      <div class="sidebar-primary-item">
+<div id="ethical-ad-placement"
+      class="flat"
+      data-ea-publisher="readthedocs"
+      data-ea-type="readthedocs-sidebar"
+      data-ea-manual="true">
+</div></div>
+  </div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item">
+
+<nav aria-label="Breadcrumb" class="d-print-none">
+  <ul class="bd-breadcrumbs">
+    
+    <li class="breadcrumb-item breadcrumb-home">
+      <a href="../../index.html" class="nav-link" aria-label="Home">
+        <i class="fa-solid fa-home"></i>
+      </a>
+    </li>
+    
+    <li class="breadcrumb-item"><a href="../index.html" class="nav-link">Module code</a></li>
+    
+    <li class="breadcrumb-item active" aria-current="page"><span class="ellipsis">tiltr.tiltr</span></li>
+  </ul>
+</nav>
+</div>
+      
+    </div>
+  
+  
+</div>
+</div>
+              
+              
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <h1>Source code for tiltr.tiltr</h1><div class="highlight"><pre>
+<span></span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">tiltr - Visualization package for exoplanet spin-orbit obliquity data.</span>
+<span class="sd">&quot;&quot;&quot;</span>
+
+<span class="kn">import</span><span class="w"> </span><span class="nn">pandas</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">pd</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">warnings</span>
+
+<span class="n">warnings</span><span class="o">.</span><span class="n">filterwarnings</span><span class="p">(</span><span class="s2">&quot;ignore&quot;</span><span class="p">,</span> <span class="n">category</span><span class="o">=</span><span class="ne">UserWarning</span><span class="p">)</span>
+
+
+<div class="viewcode-block" id="Plotter">
+<a class="viewcode-back" href="../../core.html#tiltr.tiltr.Plotter">[docs]</a>
+<span class="k">class</span><span class="w"> </span><span class="nc">Plotter</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Loads exoplanet obliquity data from the TEPCat catalogue and provides</span>
+<span class="sd">    plotting methods for absolute lambda and psi against Teff, semi-major axis,</span>
+<span class="sd">    and stellar mass.</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    data_source : str, optional</span>
+<span class="sd">        URL or local file path to the CSV data. If None, uses the default</span>
+<span class="sd">        TEPCat URL.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="c1"># Column indices based on the TEPCat allinfo-csv.csv format</span>
+    <span class="n">_COL_MAP</span> <span class="o">=</span> <span class="p">{</span>
+        <span class="s1">&#39;System&#39;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+        <span class="s1">&#39;Type&#39;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+        <span class="s1">&#39;RA&#39;</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span>
+        <span class="s1">&#39;Dec&#39;</span><span class="p">:</span> <span class="mi">3</span><span class="p">,</span>
+        <span class="s1">&#39;Vmag&#39;</span><span class="p">:</span> <span class="mi">4</span><span class="p">,</span>
+        <span class="s1">&#39;Kmag&#39;</span><span class="p">:</span> <span class="mi">5</span><span class="p">,</span>
+        <span class="s1">&#39;length&#39;</span><span class="p">:</span> <span class="mi">6</span><span class="p">,</span>
+        <span class="s1">&#39;depth&#39;</span><span class="p">:</span> <span class="mi">7</span><span class="p">,</span>
+        <span class="s1">&#39;T0&#39;</span><span class="p">:</span> <span class="mi">8</span><span class="p">,</span>
+        <span class="s1">&#39;T0err&#39;</span><span class="p">:</span> <span class="mi">9</span><span class="p">,</span>
+        <span class="s1">&#39;Period&#39;</span><span class="p">:</span> <span class="mi">10</span><span class="p">,</span>
+        <span class="s1">&#39;Perioderr&#39;</span><span class="p">:</span> <span class="mi">11</span><span class="p">,</span>
+        <span class="s1">&#39;Teff&#39;</span><span class="p">:</span> <span class="mi">12</span><span class="p">,</span>
+        <span class="s1">&#39;Teff_err1&#39;</span><span class="p">:</span> <span class="mi">13</span><span class="p">,</span>
+        <span class="s1">&#39;Teff_err2&#39;</span><span class="p">:</span> <span class="mi">14</span><span class="p">,</span>
+        <span class="s1">&#39;[Fe/H]&#39;</span><span class="p">:</span> <span class="mi">15</span><span class="p">,</span>
+        <span class="s1">&#39;[Fe/H]_erru&#39;</span><span class="p">:</span> <span class="mi">16</span><span class="p">,</span>
+        <span class="s1">&#39;[Fe/H]_errd&#39;</span><span class="p">:</span> <span class="mi">17</span><span class="p">,</span>
+        <span class="s1">&#39;M_A&#39;</span><span class="p">:</span> <span class="mi">18</span><span class="p">,</span>
+        <span class="s1">&#39;M_A_errup&#39;</span><span class="p">:</span> <span class="mi">19</span><span class="p">,</span>
+        <span class="s1">&#39;M_A_errdn&#39;</span><span class="p">:</span> <span class="mi">20</span><span class="p">,</span>
+        <span class="s1">&#39;R_A&#39;</span><span class="p">:</span> <span class="mi">21</span><span class="p">,</span>
+        <span class="s1">&#39;R_A_errup&#39;</span><span class="p">:</span> <span class="mi">22</span><span class="p">,</span>
+        <span class="s1">&#39;R_A_errdn&#39;</span><span class="p">:</span> <span class="mi">23</span><span class="p">,</span>
+        <span class="s1">&#39;loggA&#39;</span><span class="p">:</span> <span class="mi">24</span><span class="p">,</span>
+        <span class="s1">&#39;loggA_errup&#39;</span><span class="p">:</span> <span class="mi">25</span><span class="p">,</span>
+        <span class="s1">&#39;loggA_errdn&#39;</span><span class="p">:</span> <span class="mi">26</span><span class="p">,</span>
+        <span class="s1">&#39;rho_A&#39;</span><span class="p">:</span> <span class="mi">27</span><span class="p">,</span>
+        <span class="s1">&#39;rho_A_errup&#39;</span><span class="p">:</span> <span class="mi">28</span><span class="p">,</span>
+        <span class="s1">&#39;rho_A_errdn&#39;</span><span class="p">:</span> <span class="mi">29</span><span class="p">,</span>
+        <span class="s1">&#39;e&#39;</span><span class="p">:</span> <span class="mi">30</span><span class="p">,</span>
+        <span class="s1">&#39;e_errup&#39;</span><span class="p">:</span> <span class="mi">31</span><span class="p">,</span>
+        <span class="s1">&#39;e_errdown&#39;</span><span class="p">:</span> <span class="mi">32</span><span class="p">,</span>
+        <span class="s1">&#39;a(AU)&#39;</span><span class="p">:</span> <span class="mi">33</span><span class="p">,</span>
+        <span class="s1">&#39;a_errup&#39;</span><span class="p">:</span> <span class="mi">34</span><span class="p">,</span>
+        <span class="s1">&#39;a_errdown&#39;</span><span class="p">:</span> <span class="mi">35</span><span class="p">,</span>
+        <span class="s1">&#39;M_b&#39;</span><span class="p">:</span> <span class="mi">36</span><span class="p">,</span>
+        <span class="s1">&#39;M_b_errup&#39;</span><span class="p">:</span> <span class="mi">37</span><span class="p">,</span>
+        <span class="s1">&#39;M_b_errdn&#39;</span><span class="p">:</span> <span class="mi">38</span><span class="p">,</span>
+        <span class="s1">&#39;R_b&#39;</span><span class="p">:</span> <span class="mi">39</span><span class="p">,</span>
+        <span class="s1">&#39;R_b_errup&#39;</span><span class="p">:</span> <span class="mi">40</span><span class="p">,</span>
+        <span class="s1">&#39;R_b_errdn&#39;</span><span class="p">:</span> <span class="mi">41</span><span class="p">,</span>
+        <span class="s1">&#39;g_b&#39;</span><span class="p">:</span> <span class="mi">42</span><span class="p">,</span>
+        <span class="s1">&#39;g_b_errup&#39;</span><span class="p">:</span> <span class="mi">43</span><span class="p">,</span>
+        <span class="s1">&#39;g_b_errdn&#39;</span><span class="p">:</span> <span class="mi">44</span><span class="p">,</span>
+        <span class="s1">&#39;rho_b&#39;</span><span class="p">:</span> <span class="mi">45</span><span class="p">,</span>
+        <span class="s1">&#39;rho_b_errup&#39;</span><span class="p">:</span> <span class="mi">46</span><span class="p">,</span>
+        <span class="s1">&#39;rho_b_errdn&#39;</span><span class="p">:</span> <span class="mi">47</span><span class="p">,</span>
+        <span class="s1">&#39;Teq&#39;</span><span class="p">:</span> <span class="mi">48</span><span class="p">,</span>
+        <span class="s1">&#39;Teq_err1&#39;</span><span class="p">:</span> <span class="mi">49</span><span class="p">,</span>
+        <span class="s1">&#39;Teq_err2&#39;</span><span class="p">:</span> <span class="mi">50</span><span class="p">,</span>
+        <span class="s1">&#39;Lambda&#39;</span><span class="p">:</span> <span class="mi">51</span><span class="p">,</span>
+        <span class="s1">&#39;Lambda_err1&#39;</span><span class="p">:</span> <span class="mi">52</span><span class="p">,</span>
+        <span class="s1">&#39;Lambda_err2&#39;</span><span class="p">:</span> <span class="mi">53</span><span class="p">,</span>
+        <span class="s1">&#39;Psi&#39;</span><span class="p">:</span> <span class="mi">54</span><span class="p">,</span>
+        <span class="s1">&#39;Psi_err1&#39;</span><span class="p">:</span> <span class="mi">55</span><span class="p">,</span>
+        <span class="s1">&#39;Psi_err2&#39;</span><span class="p">:</span> <span class="mi">56</span>
+    <span class="p">}</span>
+
+    <span class="n">_NEEDED_COLS</span> <span class="o">=</span> <span class="p">[</span>
+        <span class="s1">&#39;System&#39;</span><span class="p">,</span> <span class="s1">&#39;Teff&#39;</span><span class="p">,</span> <span class="s1">&#39;M_A&#39;</span><span class="p">,</span> <span class="s1">&#39;R_b&#39;</span><span class="p">,</span> <span class="s1">&#39;e&#39;</span><span class="p">,</span> <span class="s1">&#39;a(AU)&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;Lambda&#39;</span><span class="p">,</span> <span class="s1">&#39;Lambda_err1&#39;</span><span class="p">,</span> <span class="s1">&#39;Lambda_err2&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;Psi&#39;</span><span class="p">,</span> <span class="s1">&#39;Psi_err1&#39;</span><span class="p">,</span> <span class="s1">&#39;Psi_err2&#39;</span>
+    <span class="p">]</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">data_source</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">data_source</span> <span class="o">=</span> <span class="n">data_source</span> <span class="k">if</span> <span class="n">data_source</span> <span class="k">else</span> \
+            <span class="s2">&quot;https://www.astro.keele.ac.uk/jkt/tepcat/allinfo-csv.csv&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">df_raw</span> <span class="o">=</span> <span class="kc">None</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">data</span> <span class="o">=</span> <span class="kc">None</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_load_data</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_prepare_data</span><span class="p">()</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">_load_data</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Load CSV data from the given source.&quot;&quot;&quot;</span>
+        <span class="k">try</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">df_raw</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">data_source</span><span class="p">,</span> <span class="n">comment</span><span class="o">=</span><span class="s1">&#39;#&#39;</span><span class="p">)</span>
+        <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Could not load data from </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">data_source</span><span class="si">}</span><span class="s2">: </span><span class="si">{</span><span class="n">e</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">_prepare_data</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Extract relevant columns, compute absolute obliquities with</span>
+<span class="sd">        asymmetric error bars, and clean invalid entries.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">df</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">df_raw</span>
+        <span class="n">indices</span> <span class="o">=</span> <span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">_COL_MAP</span><span class="p">[</span><span class="n">col</span><span class="p">]</span> <span class="k">for</span> <span class="n">col</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">_NEEDED_COLS</span><span class="p">]</span>
+        <span class="n">data</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">iloc</span><span class="p">[:,</span> <span class="n">indices</span><span class="p">]</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+        <span class="n">data</span><span class="o">.</span><span class="n">columns</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_NEEDED_COLS</span>
+
+        <span class="k">for</span> <span class="n">col</span> <span class="ow">in</span> <span class="n">data</span><span class="o">.</span><span class="n">columns</span><span class="p">:</span>
+            <span class="n">data</span><span class="p">[</span><span class="n">col</span><span class="p">]</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">to_numeric</span><span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="n">col</span><span class="p">],</span> <span class="n">errors</span><span class="o">=</span><span class="s1">&#39;coerce&#39;</span><span class="p">)</span>
+
+        <span class="k">def</span><span class="w"> </span><span class="nf">compute_abs_errors</span><span class="p">(</span><span class="n">val</span><span class="p">,</span> <span class="n">err_low</span><span class="p">,</span> <span class="n">err_high</span><span class="p">):</span>
+            <span class="n">low</span> <span class="o">=</span> <span class="n">val</span> <span class="o">-</span> <span class="n">err_low</span>
+            <span class="n">high</span> <span class="o">=</span> <span class="n">val</span> <span class="o">+</span> <span class="n">err_high</span>
+            <span class="n">abs_val</span> <span class="o">=</span> <span class="nb">abs</span><span class="p">(</span><span class="n">val</span><span class="p">)</span>
+            <span class="k">if</span> <span class="n">low</span> <span class="o">*</span> <span class="n">high</span> <span class="o">&lt;=</span> <span class="mi">0</span><span class="p">:</span>
+                <span class="n">abs_min</span> <span class="o">=</span> <span class="mf">0.0</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="n">abs_min</span> <span class="o">=</span> <span class="nb">min</span><span class="p">(</span><span class="nb">abs</span><span class="p">(</span><span class="n">low</span><span class="p">),</span> <span class="nb">abs</span><span class="p">(</span><span class="n">high</span><span class="p">))</span>
+            <span class="n">abs_max</span> <span class="o">=</span> <span class="nb">max</span><span class="p">(</span><span class="nb">abs</span><span class="p">(</span><span class="n">low</span><span class="p">),</span> <span class="nb">abs</span><span class="p">(</span><span class="n">high</span><span class="p">))</span>
+            <span class="k">return</span> <span class="n">abs_val</span><span class="p">,</span> <span class="n">abs_val</span> <span class="o">-</span> <span class="n">abs_min</span><span class="p">,</span> <span class="n">abs_max</span> <span class="o">-</span> <span class="n">abs_val</span>
+
+        <span class="n">lambda_abs</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="n">lambda_err_low</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="n">lambda_err_high</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="n">psi_abs</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="n">psi_err_low</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="n">psi_err_high</span> <span class="o">=</span> <span class="p">[]</span>
+
+        <span class="k">for</span> <span class="n">_</span><span class="p">,</span> <span class="n">row</span> <span class="ow">in</span> <span class="n">data</span><span class="o">.</span><span class="n">iterrows</span><span class="p">():</span>
+            <span class="c1"># Lambda</span>
+            <span class="n">l_val</span> <span class="o">=</span> <span class="n">row</span><span class="p">[</span><span class="s1">&#39;Lambda&#39;</span><span class="p">]</span>
+            <span class="n">l_err1</span> <span class="o">=</span> <span class="n">row</span><span class="p">[</span><span class="s1">&#39;Lambda_err1&#39;</span><span class="p">]</span>
+            <span class="n">l_err2</span> <span class="o">=</span> <span class="n">row</span><span class="p">[</span><span class="s1">&#39;Lambda_err2&#39;</span><span class="p">]</span>
+            <span class="k">if</span> <span class="n">pd</span><span class="o">.</span><span class="n">isna</span><span class="p">(</span><span class="n">l_val</span><span class="p">)</span> <span class="ow">or</span> <span class="n">l_val</span> <span class="ow">in</span> <span class="p">(</span><span class="mi">999</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="o">-</span><span class="mi">999</span><span class="p">)</span> <span class="ow">or</span> <span class="n">pd</span><span class="o">.</span><span class="n">isna</span><span class="p">(</span><span class="n">l_err1</span><span class="p">)</span> <span class="ow">or</span> <span class="n">pd</span><span class="o">.</span><span class="n">isna</span><span class="p">(</span><span class="n">l_err2</span><span class="p">):</span>
+                <span class="n">lambda_abs</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">nan</span><span class="p">);</span> <span class="n">lambda_err_low</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">nan</span><span class="p">);</span> <span class="n">lambda_err_high</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">nan</span><span class="p">)</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="n">av</span><span class="p">,</span> <span class="n">el</span><span class="p">,</span> <span class="n">eh</span> <span class="o">=</span> <span class="n">compute_abs_errors</span><span class="p">(</span><span class="n">l_val</span><span class="p">,</span> <span class="n">l_err1</span><span class="p">,</span> <span class="n">l_err2</span><span class="p">)</span>
+                <span class="n">lambda_abs</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">av</span><span class="p">);</span> <span class="n">lambda_err_low</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">el</span><span class="p">);</span> <span class="n">lambda_err_high</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">eh</span><span class="p">)</span>
+
+            <span class="c1"># Psi</span>
+            <span class="n">p_val</span> <span class="o">=</span> <span class="n">row</span><span class="p">[</span><span class="s1">&#39;Psi&#39;</span><span class="p">]</span>
+            <span class="n">p_err1</span> <span class="o">=</span> <span class="n">row</span><span class="p">[</span><span class="s1">&#39;Psi_err1&#39;</span><span class="p">]</span>
+            <span class="n">p_err2</span> <span class="o">=</span> <span class="n">row</span><span class="p">[</span><span class="s1">&#39;Psi_err2&#39;</span><span class="p">]</span>
+            <span class="k">if</span> <span class="n">pd</span><span class="o">.</span><span class="n">isna</span><span class="p">(</span><span class="n">p_val</span><span class="p">)</span> <span class="ow">or</span> <span class="n">p_val</span> <span class="ow">in</span> <span class="p">(</span><span class="mi">999</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="o">-</span><span class="mi">999</span><span class="p">)</span> <span class="ow">or</span> <span class="n">pd</span><span class="o">.</span><span class="n">isna</span><span class="p">(</span><span class="n">p_err1</span><span class="p">)</span> <span class="ow">or</span> <span class="n">pd</span><span class="o">.</span><span class="n">isna</span><span class="p">(</span><span class="n">p_err2</span><span class="p">):</span>
+                <span class="n">psi_abs</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">nan</span><span class="p">);</span> <span class="n">psi_err_low</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">nan</span><span class="p">);</span> <span class="n">psi_err_high</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">nan</span><span class="p">)</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="n">av</span><span class="p">,</span> <span class="n">el</span><span class="p">,</span> <span class="n">eh</span> <span class="o">=</span> <span class="n">compute_abs_errors</span><span class="p">(</span><span class="n">p_val</span><span class="p">,</span> <span class="n">p_err1</span><span class="p">,</span> <span class="n">p_err2</span><span class="p">)</span>
+                <span class="n">psi_abs</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">av</span><span class="p">);</span> <span class="n">psi_err_low</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">el</span><span class="p">);</span> <span class="n">psi_err_high</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">eh</span><span class="p">)</span>
+
+        <span class="n">data</span><span class="p">[</span><span class="s1">&#39;lambda_abs&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">lambda_abs</span>
+        <span class="n">data</span><span class="p">[</span><span class="s1">&#39;lambda_err_low&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">lambda_err_low</span>
+        <span class="n">data</span><span class="p">[</span><span class="s1">&#39;lambda_err_high&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">lambda_err_high</span>
+        <span class="n">data</span><span class="p">[</span><span class="s1">&#39;psi_abs&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">psi_abs</span>
+        <span class="n">data</span><span class="p">[</span><span class="s1">&#39;psi_err_low&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">psi_err_low</span>
+        <span class="n">data</span><span class="p">[</span><span class="s1">&#39;psi_err_high&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">psi_err_high</span>
+
+        <span class="n">data</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">dropna</span><span class="p">(</span><span class="n">subset</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;lambda_abs&#39;</span><span class="p">,</span> <span class="s1">&#39;psi_abs&#39;</span><span class="p">],</span> <span class="n">how</span><span class="o">=</span><span class="s1">&#39;all&#39;</span><span class="p">)</span>
+
+        <span class="n">data</span><span class="p">[</span><span class="s1">&#39;e&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="s1">&#39;e&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">fillna</span><span class="p">(</span><span class="mf">0.5</span><span class="p">)</span>
+        <span class="n">data</span><span class="p">[</span><span class="s1">&#39;R_b&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="s1">&#39;R_b&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">fillna</span><span class="p">(</span><span class="mf">1.0</span><span class="p">)</span>
+
+        <span class="k">for</span> <span class="n">col</span> <span class="ow">in</span> <span class="p">[</span><span class="s1">&#39;e&#39;</span><span class="p">,</span> <span class="s1">&#39;R_b&#39;</span><span class="p">,</span> <span class="s1">&#39;Teff&#39;</span><span class="p">,</span> <span class="s1">&#39;M_A&#39;</span><span class="p">,</span> <span class="s1">&#39;a(AU)&#39;</span><span class="p">]:</span>
+            <span class="n">data</span><span class="p">[</span><span class="n">col</span><span class="p">]</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">to_numeric</span><span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="n">col</span><span class="p">],</span> <span class="n">errors</span><span class="o">=</span><span class="s1">&#39;coerce&#39;</span><span class="p">)</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">data</span> <span class="o">=</span> <span class="n">data</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">_prepare_plot</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">x_vals</span><span class="p">,</span> <span class="n">y_vals</span><span class="p">,</span> <span class="n">y_err_low</span><span class="p">,</span> <span class="n">y_err_high</span><span class="p">,</span>
+                      <span class="n">sizes</span><span class="p">,</span> <span class="n">colors</span><span class="p">,</span> <span class="n">xlabel</span><span class="p">,</span> <span class="n">ylabel</span><span class="p">,</span> <span class="n">ylim</span><span class="o">=</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">180</span><span class="p">)):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Internal helper to create a scatter plot with error bars and colorbar.</span>
+<span class="sd">        Uses reversed grayscale: low e → white, high e → black.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">6</span><span class="p">))</span>
+        <span class="c1"># Error bars behind markers</span>
+        <span class="n">ax</span><span class="o">.</span><span class="n">errorbar</span><span class="p">(</span><span class="n">x_vals</span><span class="p">,</span> <span class="n">y_vals</span><span class="p">,</span> <span class="n">yerr</span><span class="o">=</span><span class="p">[</span><span class="n">y_err_low</span><span class="p">,</span> <span class="n">y_err_high</span><span class="p">],</span>
+                    <span class="n">fmt</span><span class="o">=</span><span class="s1">&#39;none&#39;</span><span class="p">,</span> <span class="n">ecolor</span><span class="o">=</span><span class="s1">&#39;black&#39;</span><span class="p">,</span> <span class="n">capsize</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.2</span><span class="p">,</span>
+                    <span class="n">linewidth</span><span class="o">=</span><span class="mf">0.5</span><span class="p">,</span> <span class="n">zorder</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+        <span class="c1"># Scatter on top with reversed gray colormap</span>
+        <span class="n">sc</span> <span class="o">=</span> <span class="n">ax</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">x_vals</span><span class="p">,</span> <span class="n">y_vals</span><span class="p">,</span> <span class="n">s</span><span class="o">=</span><span class="n">sizes</span><span class="p">,</span> <span class="n">c</span><span class="o">=</span><span class="n">colors</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="s1">&#39;gray_r&#39;</span><span class="p">,</span>
+                        <span class="n">edgecolors</span><span class="o">=</span><span class="s1">&#39;black&#39;</span><span class="p">,</span> <span class="n">linewidth</span><span class="o">=</span><span class="mf">0.3</span><span class="p">,</span> <span class="n">vmin</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">vmax</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">zorder</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
+        <span class="n">ax</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="n">xlabel</span><span class="p">)</span>
+        <span class="n">ax</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="n">ylabel</span><span class="p">)</span>
+        <span class="n">ax</span><span class="o">.</span><span class="n">set_ylim</span><span class="p">(</span><span class="n">ylim</span><span class="p">)</span>
+        <span class="c1"># Colorbar for eccentricity</span>
+        <span class="n">cbar</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">colorbar</span><span class="p">(</span><span class="n">sc</span><span class="p">,</span> <span class="n">ax</span><span class="o">=</span><span class="n">ax</span><span class="p">,</span> <span class="n">pad</span><span class="o">=</span><span class="mf">0.02</span><span class="p">,</span> <span class="n">aspect</span><span class="o">=</span><span class="mi">30</span><span class="p">)</span>
+        <span class="n">cbar</span><span class="o">.</span><span class="n">set_label</span><span class="p">(</span><span class="s1">&#39;Eccentricity&#39;</span><span class="p">,</span> <span class="n">rotation</span><span class="o">=</span><span class="mi">270</span><span class="p">,</span> <span class="n">labelpad</span><span class="o">=</span><span class="mi">15</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">fig</span><span class="p">,</span> <span class="n">ax</span><span class="p">,</span> <span class="n">sc</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">_add_highlight</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">ax</span><span class="p">,</span> <span class="n">highlights</span><span class="p">,</span> <span class="n">x_axis</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Add one or more manually specified data points (highlights) to the plot.</span>
+<span class="sd">        Returns a tuple (handles, labels) for legend creation.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">if</span> <span class="n">highlights</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="k">return</span> <span class="p">[],</span> <span class="p">[]</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">highlights</span><span class="p">,</span> <span class="nb">list</span><span class="p">):</span>
+            <span class="n">highlights</span> <span class="o">=</span> <span class="p">[</span><span class="n">highlights</span><span class="p">]</span>
+
+        <span class="n">handles</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="n">labels</span> <span class="o">=</span> <span class="p">[]</span>
+
+        <span class="k">for</span> <span class="n">highlight</span> <span class="ow">in</span> <span class="n">highlights</span><span class="p">:</span>
+            <span class="k">if</span> <span class="s1">&#39;lambda&#39;</span> <span class="ow">in</span> <span class="n">highlight</span><span class="p">:</span>
+                <span class="n">y_val</span> <span class="o">=</span> <span class="n">highlight</span><span class="p">[</span><span class="s1">&#39;lambda&#39;</span><span class="p">]</span>
+                <span class="n">err1</span> <span class="o">=</span> <span class="n">highlight</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;lambda_err_1&#39;</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+                <span class="n">err2</span> <span class="o">=</span> <span class="n">highlight</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;lambda_err_2&#39;</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+            <span class="k">elif</span> <span class="s1">&#39;psi&#39;</span> <span class="ow">in</span> <span class="n">highlight</span><span class="p">:</span>
+                <span class="n">y_val</span> <span class="o">=</span> <span class="n">highlight</span><span class="p">[</span><span class="s1">&#39;psi&#39;</span><span class="p">]</span>
+                <span class="n">err1</span> <span class="o">=</span> <span class="n">highlight</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;psi_err_1&#39;</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+                <span class="n">err2</span> <span class="o">=</span> <span class="n">highlight</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;psi_err_2&#39;</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;Highlight dict must contain &#39;lambda&#39; or &#39;psi&#39;.&quot;</span><span class="p">)</span>
+
+            <span class="k">if</span> <span class="n">x_axis</span> <span class="o">==</span> <span class="s1">&#39;Teff&#39;</span><span class="p">:</span>
+                <span class="n">x_val</span> <span class="o">=</span> <span class="n">highlight</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;Teff&#39;</span><span class="p">)</span>
+            <span class="k">elif</span> <span class="n">x_axis</span> <span class="o">==</span> <span class="s1">&#39;a&#39;</span><span class="p">:</span>
+                <span class="n">x_val</span> <span class="o">=</span> <span class="n">highlight</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;a&#39;</span><span class="p">)</span> <span class="ow">or</span> <span class="n">highlight</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;a(AU)&#39;</span><span class="p">)</span>
+            <span class="k">elif</span> <span class="n">x_axis</span> <span class="o">==</span> <span class="s1">&#39;M&#39;</span><span class="p">:</span>
+                <span class="n">x_val</span> <span class="o">=</span> <span class="n">highlight</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;M&#39;</span><span class="p">)</span> <span class="ow">or</span> <span class="n">highlight</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;M_A&#39;</span><span class="p">)</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;Unknown x_axis.&quot;</span><span class="p">)</span>
+            <span class="k">if</span> <span class="n">x_val</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+                <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Highlight dict missing x value for </span><span class="si">{</span><span class="n">x_axis</span><span class="si">}</span><span class="s2">.&quot;</span><span class="p">)</span>
+
+            <span class="n">low</span> <span class="o">=</span> <span class="n">y_val</span> <span class="o">+</span> <span class="n">err1</span>
+            <span class="n">high</span> <span class="o">=</span> <span class="n">y_val</span> <span class="o">+</span> <span class="n">err2</span>
+            <span class="n">abs_y</span> <span class="o">=</span> <span class="nb">abs</span><span class="p">(</span><span class="n">y_val</span><span class="p">)</span>
+            <span class="k">if</span> <span class="n">low</span> <span class="o">*</span> <span class="n">high</span> <span class="o">&lt;=</span> <span class="mi">0</span><span class="p">:</span>
+                <span class="n">abs_min</span> <span class="o">=</span> <span class="mi">0</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="n">abs_min</span> <span class="o">=</span> <span class="nb">min</span><span class="p">(</span><span class="nb">abs</span><span class="p">(</span><span class="n">low</span><span class="p">),</span> <span class="nb">abs</span><span class="p">(</span><span class="n">high</span><span class="p">))</span>
+            <span class="n">abs_max</span> <span class="o">=</span> <span class="nb">max</span><span class="p">(</span><span class="nb">abs</span><span class="p">(</span><span class="n">low</span><span class="p">),</span> <span class="nb">abs</span><span class="p">(</span><span class="n">high</span><span class="p">))</span>
+            <span class="n">yerr_low_abs</span> <span class="o">=</span> <span class="n">abs_y</span> <span class="o">-</span> <span class="n">abs_min</span>
+            <span class="n">yerr_high_abs</span> <span class="o">=</span> <span class="n">abs_max</span> <span class="o">-</span> <span class="n">abs_y</span>
+
+            <span class="n">marker</span> <span class="o">=</span> <span class="n">highlight</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;marker&#39;</span><span class="p">,</span> <span class="s1">&#39;o&#39;</span><span class="p">)</span>
+            <span class="n">color</span> <span class="o">=</span> <span class="n">highlight</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;color&#39;</span><span class="p">,</span> <span class="s1">&#39;red&#39;</span><span class="p">)</span>
+            <span class="n">markersize</span> <span class="o">=</span> <span class="n">highlight</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;markersize&#39;</span><span class="p">,</span> <span class="mi">10</span><span class="p">)</span>
+            <span class="n">label</span> <span class="o">=</span> <span class="n">highlight</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;label&#39;</span><span class="p">,</span> <span class="kc">None</span><span class="p">)</span>
+
+            <span class="c1"># Error bars behind</span>
+            <span class="n">ax</span><span class="o">.</span><span class="n">errorbar</span><span class="p">(</span><span class="n">x_val</span><span class="p">,</span> <span class="n">abs_y</span><span class="p">,</span> <span class="n">yerr</span><span class="o">=</span><span class="p">[[</span><span class="n">yerr_low_abs</span><span class="p">],</span> <span class="p">[</span><span class="n">yerr_high_abs</span><span class="p">]],</span>
+                        <span class="n">fmt</span><span class="o">=</span><span class="s1">&#39;none&#39;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="n">color</span><span class="p">,</span> <span class="n">capsize</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.2</span><span class="p">,</span>
+                        <span class="n">linewidth</span><span class="o">=</span><span class="mf">0.5</span><span class="p">,</span> <span class="n">zorder</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+            <span class="c1"># Marker on top</span>
+            <span class="n">sc_h</span> <span class="o">=</span> <span class="n">ax</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">x_val</span><span class="p">,</span> <span class="n">abs_y</span><span class="p">,</span> <span class="n">marker</span><span class="o">=</span><span class="n">marker</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="n">color</span><span class="p">,</span>
+                              <span class="n">s</span><span class="o">=</span><span class="n">markersize</span><span class="o">**</span><span class="mi">2</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="n">label</span><span class="p">,</span> <span class="n">zorder</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span>
+                              <span class="n">edgecolors</span><span class="o">=</span><span class="s1">&#39;black&#39;</span><span class="p">,</span> <span class="n">linewidth</span><span class="o">=</span><span class="mf">0.3</span><span class="p">)</span>
+            <span class="k">if</span> <span class="n">label</span><span class="p">:</span>
+                <span class="n">handles</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">sc_h</span><span class="p">)</span>
+                <span class="n">labels</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">label</span><span class="p">)</span>
+
+        <span class="k">return</span> <span class="n">handles</span><span class="p">,</span> <span class="n">labels</span>
+
+    <span class="c1"># ------------------------------------------------------------------</span>
+    <span class="c1"># Public plotting methods</span>
+    <span class="c1"># ------------------------------------------------------------------</span>
+
+<div class="viewcode-block" id="Plotter.plot_lambda_vs_Teff">
+<a class="viewcode-back" href="../../core.html#tiltr.tiltr.Plotter.plot_lambda_vs_Teff">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">plot_lambda_vs_Teff</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">highlight</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">Kraft_Break</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">save_as</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Plot |lambda| against Teff.&quot;&quot;&quot;</span>
+        <span class="n">data</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">dropna</span><span class="p">(</span><span class="n">subset</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;lambda_abs&#39;</span><span class="p">,</span> <span class="s1">&#39;Teff&#39;</span><span class="p">])</span>
+        <span class="n">x</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="s1">&#39;Teff&#39;</span><span class="p">]</span>
+        <span class="n">y</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="s1">&#39;lambda_abs&#39;</span><span class="p">]</span>
+        <span class="n">yerr_low</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="s1">&#39;lambda_err_low&#39;</span><span class="p">]</span>
+        <span class="n">yerr_high</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="s1">&#39;lambda_err_high&#39;</span><span class="p">]</span>
+        <span class="n">sizes</span> <span class="o">=</span> <span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="s1">&#39;R_b&#39;</span><span class="p">]</span> <span class="o">*</span> <span class="mi">4</span><span class="p">)</span> <span class="o">**</span> <span class="mi">2</span>
+        <span class="n">colors</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="s1">&#39;e&#39;</span><span class="p">]</span>   <span class="c1"># e=0 → white, e=1 → black with gray_r</span>
+
+        <span class="n">fig</span><span class="p">,</span> <span class="n">ax</span><span class="p">,</span> <span class="n">_</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_prepare_plot</span><span class="p">(</span>
+            <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">yerr_low</span><span class="p">,</span> <span class="n">yerr_high</span><span class="p">,</span> <span class="n">sizes</span><span class="p">,</span> <span class="n">colors</span><span class="p">,</span>
+            <span class="n">xlabel</span><span class="o">=</span><span class="s1">&#39;Stellar Effective Temperature (K)&#39;</span><span class="p">,</span>
+            <span class="n">ylabel</span><span class="o">=</span><span class="s1">&#39;|λ| (deg)&#39;</span>
+        <span class="p">)</span>
+        <span class="k">if</span> <span class="n">Kraft_Break</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="n">ax</span><span class="o">.</span><span class="n">axvline</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="n">Kraft_Break</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;red&#39;</span><span class="p">,</span> <span class="n">linestyle</span><span class="o">=</span><span class="s1">&#39;--&#39;</span><span class="p">,</span> <span class="n">linewidth</span><span class="o">=</span><span class="mf">1.5</span><span class="p">)</span>
+        <span class="n">handles</span><span class="p">,</span> <span class="n">labels</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_add_highlight</span><span class="p">(</span><span class="n">ax</span><span class="p">,</span> <span class="n">highlight</span><span class="p">,</span> <span class="n">x_axis</span><span class="o">=</span><span class="s1">&#39;Teff&#39;</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">labels</span><span class="p">:</span>
+            <span class="n">ax</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="n">handles</span><span class="p">,</span> <span class="n">labels</span><span class="p">,</span> <span class="n">loc</span><span class="o">=</span><span class="s1">&#39;upper center&#39;</span><span class="p">,</span>
+                      <span class="n">bbox_to_anchor</span><span class="o">=</span><span class="p">(</span><span class="mf">0.5</span><span class="p">,</span> <span class="mf">1.08</span><span class="p">),</span> <span class="n">ncol</span><span class="o">=</span><span class="nb">len</span><span class="p">(</span><span class="n">labels</span><span class="p">),</span>
+                      <span class="n">frameon</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_save_or_show</span><span class="p">(</span><span class="n">save_as</span><span class="p">)</span></div>
+
+
+<div class="viewcode-block" id="Plotter.plot_lambda_vs_a">
+<a class="viewcode-back" href="../../core.html#tiltr.tiltr.Plotter.plot_lambda_vs_a">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">plot_lambda_vs_a</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">highlight</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">save_as</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Plot |lambda| against semi-major axis (log scale).&quot;&quot;&quot;</span>
+        <span class="n">data</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">dropna</span><span class="p">(</span><span class="n">subset</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;lambda_abs&#39;</span><span class="p">,</span> <span class="s1">&#39;a(AU)&#39;</span><span class="p">])</span>
+        <span class="n">x</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="s1">&#39;a(AU)&#39;</span><span class="p">]</span>
+        <span class="n">y</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="s1">&#39;lambda_abs&#39;</span><span class="p">]</span>
+        <span class="n">yerr_low</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="s1">&#39;lambda_err_low&#39;</span><span class="p">]</span>
+        <span class="n">yerr_high</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="s1">&#39;lambda_err_high&#39;</span><span class="p">]</span>
+        <span class="n">sizes</span> <span class="o">=</span> <span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="s1">&#39;R_b&#39;</span><span class="p">]</span> <span class="o">*</span> <span class="mi">4</span><span class="p">)</span> <span class="o">**</span> <span class="mi">2</span>
+        <span class="n">colors</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="s1">&#39;e&#39;</span><span class="p">]</span>
+
+        <span class="n">fig</span><span class="p">,</span> <span class="n">ax</span><span class="p">,</span> <span class="n">_</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_prepare_plot</span><span class="p">(</span>
+            <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">yerr_low</span><span class="p">,</span> <span class="n">yerr_high</span><span class="p">,</span> <span class="n">sizes</span><span class="p">,</span> <span class="n">colors</span><span class="p">,</span>
+            <span class="n">xlabel</span><span class="o">=</span><span class="s1">&#39;Semi-major Axis (AU) [log scale]&#39;</span><span class="p">,</span>
+            <span class="n">ylabel</span><span class="o">=</span><span class="s1">&#39;|λ| (deg)&#39;</span>
+        <span class="p">)</span>
+        <span class="n">ax</span><span class="o">.</span><span class="n">set_xscale</span><span class="p">(</span><span class="s1">&#39;log&#39;</span><span class="p">)</span>
+        <span class="n">handles</span><span class="p">,</span> <span class="n">labels</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_add_highlight</span><span class="p">(</span><span class="n">ax</span><span class="p">,</span> <span class="n">highlight</span><span class="p">,</span> <span class="n">x_axis</span><span class="o">=</span><span class="s1">&#39;a&#39;</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">labels</span><span class="p">:</span>
+            <span class="n">ax</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="n">handles</span><span class="p">,</span> <span class="n">labels</span><span class="p">,</span> <span class="n">loc</span><span class="o">=</span><span class="s1">&#39;upper center&#39;</span><span class="p">,</span>
+                      <span class="n">bbox_to_anchor</span><span class="o">=</span><span class="p">(</span><span class="mf">0.5</span><span class="p">,</span> <span class="mf">1.08</span><span class="p">),</span> <span class="n">ncol</span><span class="o">=</span><span class="nb">len</span><span class="p">(</span><span class="n">labels</span><span class="p">),</span>
+                      <span class="n">frameon</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_save_or_show</span><span class="p">(</span><span class="n">save_as</span><span class="p">)</span></div>
+
+
+<div class="viewcode-block" id="Plotter.plot_lambda_vs_M">
+<a class="viewcode-back" href="../../core.html#tiltr.tiltr.Plotter.plot_lambda_vs_M">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">plot_lambda_vs_M</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">highlight</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">save_as</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Plot |lambda| against stellar mass (log scale) with line at 1.2 Msun.&quot;&quot;&quot;</span>
+        <span class="n">data</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">dropna</span><span class="p">(</span><span class="n">subset</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;lambda_abs&#39;</span><span class="p">,</span> <span class="s1">&#39;M_A&#39;</span><span class="p">])</span>
+        <span class="n">x</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="s1">&#39;M_A&#39;</span><span class="p">]</span>
+        <span class="n">y</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="s1">&#39;lambda_abs&#39;</span><span class="p">]</span>
+        <span class="n">yerr_low</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="s1">&#39;lambda_err_low&#39;</span><span class="p">]</span>
+        <span class="n">yerr_high</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="s1">&#39;lambda_err_high&#39;</span><span class="p">]</span>
+        <span class="n">sizes</span> <span class="o">=</span> <span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="s1">&#39;R_b&#39;</span><span class="p">]</span> <span class="o">*</span> <span class="mi">4</span><span class="p">)</span> <span class="o">**</span> <span class="mi">2</span>
+        <span class="n">colors</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="s1">&#39;e&#39;</span><span class="p">]</span>
+
+        <span class="n">fig</span><span class="p">,</span> <span class="n">ax</span><span class="p">,</span> <span class="n">_</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_prepare_plot</span><span class="p">(</span>
+            <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">yerr_low</span><span class="p">,</span> <span class="n">yerr_high</span><span class="p">,</span> <span class="n">sizes</span><span class="p">,</span> <span class="n">colors</span><span class="p">,</span>
+            <span class="n">xlabel</span><span class="o">=</span><span class="s1">&#39;Stellar Mass (M_sun) [log scale]&#39;</span><span class="p">,</span>
+            <span class="n">ylabel</span><span class="o">=</span><span class="s1">&#39;|λ| (deg)&#39;</span>
+        <span class="p">)</span>
+        <span class="n">ax</span><span class="o">.</span><span class="n">set_xscale</span><span class="p">(</span><span class="s1">&#39;log&#39;</span><span class="p">)</span>
+        <span class="n">ax</span><span class="o">.</span><span class="n">axvline</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="mf">1.2</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;red&#39;</span><span class="p">,</span> <span class="n">linestyle</span><span class="o">=</span><span class="s1">&#39;--&#39;</span><span class="p">,</span> <span class="n">linewidth</span><span class="o">=</span><span class="mf">1.5</span><span class="p">)</span>
+        <span class="n">handles</span><span class="p">,</span> <span class="n">labels</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_add_highlight</span><span class="p">(</span><span class="n">ax</span><span class="p">,</span> <span class="n">highlight</span><span class="p">,</span> <span class="n">x_axis</span><span class="o">=</span><span class="s1">&#39;M&#39;</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">labels</span><span class="p">:</span>
+            <span class="n">ax</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="n">handles</span><span class="p">,</span> <span class="n">labels</span><span class="p">,</span> <span class="n">loc</span><span class="o">=</span><span class="s1">&#39;upper center&#39;</span><span class="p">,</span>
+                      <span class="n">bbox_to_anchor</span><span class="o">=</span><span class="p">(</span><span class="mf">0.5</span><span class="p">,</span> <span class="mf">1.08</span><span class="p">),</span> <span class="n">ncol</span><span class="o">=</span><span class="nb">len</span><span class="p">(</span><span class="n">labels</span><span class="p">),</span>
+                      <span class="n">frameon</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_save_or_show</span><span class="p">(</span><span class="n">save_as</span><span class="p">)</span></div>
+
+
+    <span class="c1"># --- Psi versions ---</span>
+
+<div class="viewcode-block" id="Plotter.plot_psi_vs_Teff">
+<a class="viewcode-back" href="../../core.html#tiltr.tiltr.Plotter.plot_psi_vs_Teff">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">plot_psi_vs_Teff</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">highlight</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">Kraft_Break</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">save_as</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Plot |psi| against Teff.&quot;&quot;&quot;</span>
+        <span class="n">data</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">dropna</span><span class="p">(</span><span class="n">subset</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;psi_abs&#39;</span><span class="p">,</span> <span class="s1">&#39;Teff&#39;</span><span class="p">])</span>
+        <span class="n">x</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="s1">&#39;Teff&#39;</span><span class="p">]</span>
+        <span class="n">y</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="s1">&#39;psi_abs&#39;</span><span class="p">]</span>
+        <span class="n">yerr_low</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="s1">&#39;psi_err_low&#39;</span><span class="p">]</span>
+        <span class="n">yerr_high</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="s1">&#39;psi_err_high&#39;</span><span class="p">]</span>
+        <span class="n">sizes</span> <span class="o">=</span> <span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="s1">&#39;R_b&#39;</span><span class="p">]</span> <span class="o">*</span> <span class="mi">4</span><span class="p">)</span> <span class="o">**</span> <span class="mi">2</span>
+        <span class="n">colors</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="s1">&#39;e&#39;</span><span class="p">]</span>
+
+        <span class="n">fig</span><span class="p">,</span> <span class="n">ax</span><span class="p">,</span> <span class="n">_</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_prepare_plot</span><span class="p">(</span>
+            <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">yerr_low</span><span class="p">,</span> <span class="n">yerr_high</span><span class="p">,</span> <span class="n">sizes</span><span class="p">,</span> <span class="n">colors</span><span class="p">,</span>
+            <span class="n">xlabel</span><span class="o">=</span><span class="s1">&#39;Stellar Effective Temperature (K)&#39;</span><span class="p">,</span>
+            <span class="n">ylabel</span><span class="o">=</span><span class="s1">&#39;|ψ| (deg)&#39;</span>
+        <span class="p">)</span>
+        <span class="k">if</span> <span class="n">Kraft_Break</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="n">ax</span><span class="o">.</span><span class="n">axvline</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="n">Kraft_Break</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;red&#39;</span><span class="p">,</span> <span class="n">linestyle</span><span class="o">=</span><span class="s1">&#39;--&#39;</span><span class="p">,</span> <span class="n">linewidth</span><span class="o">=</span><span class="mf">1.5</span><span class="p">)</span>
+        <span class="n">handles</span><span class="p">,</span> <span class="n">labels</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_add_highlight</span><span class="p">(</span><span class="n">ax</span><span class="p">,</span> <span class="n">highlight</span><span class="p">,</span> <span class="n">x_axis</span><span class="o">=</span><span class="s1">&#39;Teff&#39;</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">labels</span><span class="p">:</span>
+            <span class="n">ax</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="n">handles</span><span class="p">,</span> <span class="n">labels</span><span class="p">,</span> <span class="n">loc</span><span class="o">=</span><span class="s1">&#39;upper center&#39;</span><span class="p">,</span>
+                      <span class="n">bbox_to_anchor</span><span class="o">=</span><span class="p">(</span><span class="mf">0.5</span><span class="p">,</span> <span class="mf">1.08</span><span class="p">),</span> <span class="n">ncol</span><span class="o">=</span><span class="nb">len</span><span class="p">(</span><span class="n">labels</span><span class="p">),</span>
+                      <span class="n">frameon</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_save_or_show</span><span class="p">(</span><span class="n">save_as</span><span class="p">)</span></div>
+
+
+<div class="viewcode-block" id="Plotter.plot_psi_vs_a">
+<a class="viewcode-back" href="../../core.html#tiltr.tiltr.Plotter.plot_psi_vs_a">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">plot_psi_vs_a</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">highlight</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">save_as</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Plot |psi| against semi-major axis (log scale).&quot;&quot;&quot;</span>
+        <span class="n">data</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">dropna</span><span class="p">(</span><span class="n">subset</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;psi_abs&#39;</span><span class="p">,</span> <span class="s1">&#39;a(AU)&#39;</span><span class="p">])</span>
+        <span class="n">x</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="s1">&#39;a(AU)&#39;</span><span class="p">]</span>
+        <span class="n">y</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="s1">&#39;psi_abs&#39;</span><span class="p">]</span>
+        <span class="n">yerr_low</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="s1">&#39;psi_err_low&#39;</span><span class="p">]</span>
+        <span class="n">yerr_high</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="s1">&#39;psi_err_high&#39;</span><span class="p">]</span>
+        <span class="n">sizes</span> <span class="o">=</span> <span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="s1">&#39;R_b&#39;</span><span class="p">]</span> <span class="o">*</span> <span class="mi">4</span><span class="p">)</span> <span class="o">**</span> <span class="mi">2</span>
+        <span class="n">colors</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="s1">&#39;e&#39;</span><span class="p">]</span>
+
+        <span class="n">fig</span><span class="p">,</span> <span class="n">ax</span><span class="p">,</span> <span class="n">_</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_prepare_plot</span><span class="p">(</span>
+            <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">yerr_low</span><span class="p">,</span> <span class="n">yerr_high</span><span class="p">,</span> <span class="n">sizes</span><span class="p">,</span> <span class="n">colors</span><span class="p">,</span>
+            <span class="n">xlabel</span><span class="o">=</span><span class="s1">&#39;Semi-major Axis (AU) [log scale]&#39;</span><span class="p">,</span>
+            <span class="n">ylabel</span><span class="o">=</span><span class="s1">&#39;|ψ| (deg)&#39;</span>
+        <span class="p">)</span>
+        <span class="n">ax</span><span class="o">.</span><span class="n">set_xscale</span><span class="p">(</span><span class="s1">&#39;log&#39;</span><span class="p">)</span>
+        <span class="n">handles</span><span class="p">,</span> <span class="n">labels</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_add_highlight</span><span class="p">(</span><span class="n">ax</span><span class="p">,</span> <span class="n">highlight</span><span class="p">,</span> <span class="n">x_axis</span><span class="o">=</span><span class="s1">&#39;a&#39;</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">labels</span><span class="p">:</span>
+            <span class="n">ax</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="n">handles</span><span class="p">,</span> <span class="n">labels</span><span class="p">,</span> <span class="n">loc</span><span class="o">=</span><span class="s1">&#39;upper center&#39;</span><span class="p">,</span>
+                      <span class="n">bbox_to_anchor</span><span class="o">=</span><span class="p">(</span><span class="mf">0.5</span><span class="p">,</span> <span class="mf">1.08</span><span class="p">),</span> <span class="n">ncol</span><span class="o">=</span><span class="nb">len</span><span class="p">(</span><span class="n">labels</span><span class="p">),</span>
+                      <span class="n">frameon</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_save_or_show</span><span class="p">(</span><span class="n">save_as</span><span class="p">)</span></div>
+
+
+<div class="viewcode-block" id="Plotter.plot_psi_vs_M">
+<a class="viewcode-back" href="../../core.html#tiltr.tiltr.Plotter.plot_psi_vs_M">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">plot_psi_vs_M</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">highlight</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">save_as</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Plot |psi| against stellar mass (log scale) with line at 1.2 Msun.&quot;&quot;&quot;</span>
+        <span class="n">data</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">dropna</span><span class="p">(</span><span class="n">subset</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;psi_abs&#39;</span><span class="p">,</span> <span class="s1">&#39;M_A&#39;</span><span class="p">])</span>
+        <span class="n">x</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="s1">&#39;M_A&#39;</span><span class="p">]</span>
+        <span class="n">y</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="s1">&#39;psi_abs&#39;</span><span class="p">]</span>
+        <span class="n">yerr_low</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="s1">&#39;psi_err_low&#39;</span><span class="p">]</span>
+        <span class="n">yerr_high</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="s1">&#39;psi_err_high&#39;</span><span class="p">]</span>
+        <span class="n">sizes</span> <span class="o">=</span> <span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="s1">&#39;R_b&#39;</span><span class="p">]</span> <span class="o">*</span> <span class="mi">4</span><span class="p">)</span> <span class="o">**</span> <span class="mi">2</span>
+        <span class="n">colors</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="s1">&#39;e&#39;</span><span class="p">]</span>
+
+        <span class="n">fig</span><span class="p">,</span> <span class="n">ax</span><span class="p">,</span> <span class="n">_</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_prepare_plot</span><span class="p">(</span>
+            <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">yerr_low</span><span class="p">,</span> <span class="n">yerr_high</span><span class="p">,</span> <span class="n">sizes</span><span class="p">,</span> <span class="n">colors</span><span class="p">,</span>
+            <span class="n">xlabel</span><span class="o">=</span><span class="s1">&#39;Stellar Mass (M_sun) [log scale]&#39;</span><span class="p">,</span>
+            <span class="n">ylabel</span><span class="o">=</span><span class="s1">&#39;|ψ| (deg)&#39;</span>
+        <span class="p">)</span>
+        <span class="n">ax</span><span class="o">.</span><span class="n">set_xscale</span><span class="p">(</span><span class="s1">&#39;log&#39;</span><span class="p">)</span>
+        <span class="n">ax</span><span class="o">.</span><span class="n">axvline</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="mf">1.2</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;red&#39;</span><span class="p">,</span> <span class="n">linestyle</span><span class="o">=</span><span class="s1">&#39;--&#39;</span><span class="p">,</span> <span class="n">linewidth</span><span class="o">=</span><span class="mf">1.5</span><span class="p">)</span>
+        <span class="n">handles</span><span class="p">,</span> <span class="n">labels</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_add_highlight</span><span class="p">(</span><span class="n">ax</span><span class="p">,</span> <span class="n">highlight</span><span class="p">,</span> <span class="n">x_axis</span><span class="o">=</span><span class="s1">&#39;M&#39;</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">labels</span><span class="p">:</span>
+            <span class="n">ax</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="n">handles</span><span class="p">,</span> <span class="n">labels</span><span class="p">,</span> <span class="n">loc</span><span class="o">=</span><span class="s1">&#39;upper center&#39;</span><span class="p">,</span>
+                      <span class="n">bbox_to_anchor</span><span class="o">=</span><span class="p">(</span><span class="mf">0.5</span><span class="p">,</span> <span class="mf">1.08</span><span class="p">),</span> <span class="n">ncol</span><span class="o">=</span><span class="nb">len</span><span class="p">(</span><span class="n">labels</span><span class="p">),</span>
+                      <span class="n">frameon</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_save_or_show</span><span class="p">(</span><span class="n">save_as</span><span class="p">)</span></div>
+
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">_save_or_show</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">save_as</span><span class="p">):</span>
+        <span class="k">if</span> <span class="n">save_as</span><span class="p">:</span>
+            <span class="n">plt</span><span class="o">.</span><span class="n">savefig</span><span class="p">(</span><span class="n">save_as</span><span class="p">,</span> <span class="n">dpi</span><span class="o">=</span><span class="mi">150</span><span class="p">,</span> <span class="n">bbox_inches</span><span class="o">=</span><span class="s1">&#39;tight&#39;</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span></div>
+
+
+
+<span class="c1"># ----------------------------------------------------------------------</span>
+<span class="c1"># Module-level convenience functions</span>
+<span class="c1"># ----------------------------------------------------------------------</span>
+
+<span class="n">_plotter</span> <span class="o">=</span> <span class="kc">None</span>
+
+<div class="viewcode-block" id="get_plotter">
+<a class="viewcode-back" href="../../core.html#tiltr.tiltr.get_plotter">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">get_plotter</span><span class="p">():</span>
+    <span class="k">global</span> <span class="n">_plotter</span>
+    <span class="k">if</span> <span class="n">_plotter</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="n">_plotter</span> <span class="o">=</span> <span class="n">Plotter</span><span class="p">()</span>
+    <span class="k">return</span> <span class="n">_plotter</span></div>
+
+
+
+<div class="viewcode-block" id="lambda_T">
+<a class="viewcode-back" href="../../core.html#tiltr.tiltr.lambda_T">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">lambda_T</span><span class="p">(</span><span class="n">highlight</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">Kraft_Break</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">save_as</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+    <span class="n">get_plotter</span><span class="p">()</span><span class="o">.</span><span class="n">plot_lambda_vs_Teff</span><span class="p">(</span><span class="n">highlight</span><span class="p">,</span> <span class="n">Kraft_Break</span><span class="p">,</span> <span class="n">save_as</span><span class="p">)</span></div>
+
+
+<div class="viewcode-block" id="lambda_a">
+<a class="viewcode-back" href="../../core.html#tiltr.tiltr.lambda_a">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">lambda_a</span><span class="p">(</span><span class="n">highlight</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">save_as</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+    <span class="n">get_plotter</span><span class="p">()</span><span class="o">.</span><span class="n">plot_lambda_vs_a</span><span class="p">(</span><span class="n">highlight</span><span class="p">,</span> <span class="n">save_as</span><span class="p">)</span></div>
+
+
+<div class="viewcode-block" id="lambda_M">
+<a class="viewcode-back" href="../../core.html#tiltr.tiltr.lambda_M">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">lambda_M</span><span class="p">(</span><span class="n">highlight</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">save_as</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+    <span class="n">get_plotter</span><span class="p">()</span><span class="o">.</span><span class="n">plot_lambda_vs_M</span><span class="p">(</span><span class="n">highlight</span><span class="p">,</span> <span class="n">save_as</span><span class="p">)</span></div>
+
+
+<div class="viewcode-block" id="psi_T">
+<a class="viewcode-back" href="../../core.html#tiltr.tiltr.psi_T">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">psi_T</span><span class="p">(</span><span class="n">highlight</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">Kraft_Break</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">save_as</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+    <span class="n">get_plotter</span><span class="p">()</span><span class="o">.</span><span class="n">plot_psi_vs_Teff</span><span class="p">(</span><span class="n">highlight</span><span class="p">,</span> <span class="n">Kraft_Break</span><span class="p">,</span> <span class="n">save_as</span><span class="p">)</span></div>
+
+
+<div class="viewcode-block" id="psi_a">
+<a class="viewcode-back" href="../../core.html#tiltr.tiltr.psi_a">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">psi_a</span><span class="p">(</span><span class="n">highlight</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">save_as</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+    <span class="n">get_plotter</span><span class="p">()</span><span class="o">.</span><span class="n">plot_psi_vs_a</span><span class="p">(</span><span class="n">highlight</span><span class="p">,</span> <span class="n">save_as</span><span class="p">)</span></div>
+
+
+<div class="viewcode-block" id="psi_M">
+<a class="viewcode-back" href="../../core.html#tiltr.tiltr.psi_M">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">psi_M</span><span class="p">(</span><span class="n">highlight</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">save_as</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+    <span class="n">get_plotter</span><span class="p">()</span><span class="o">.</span><span class="n">plot_psi_vs_M</span><span class="p">(</span><span class="n">highlight</span><span class="p">,</span> <span class="n">save_as</span><span class="p">)</span></div>
+
+</pre></div>
+
+                </article>
+              
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+          </footer>
+        
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script defer src="../../_static/scripts/bootstrap.js?digest=90905a2f556bf617f1a9"></script>
+<script defer src="../../_static/scripts/pydata-sphinx-theme.js?digest=90905a2f556bf617f1a9"></script>
+
+  <footer class="bd-footer">
+<div class="bd-footer__inner bd-page-width">
+  
+    <div class="footer-items__start">
+      
+        <div class="footer-item">
+
+  <p class="copyright">
+    
+      © Copyright 2026, Shariat.
+      <br/>
+    
+  </p>
+</div>
+      
+        <div class="footer-item">
+
+  <p class="sphinx-version">
+    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 9.1.0.
+    <br/>
+  </p>
+</div>
+      
+    </div>
+  
+  
+  
+    <div class="footer-items__end">
+      
+        <div class="footer-item">
+<p class="theme-version">
+  <!-- # L10n: Setting the PST URL as an argument as this does not need to be localized -->
+  Built with the <a href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">PyData Sphinx Theme</a> 0.20.0.
+</p></div>
+      
+    </div>
+  
+</div>
+
+  </footer>
+  </body>
+</html>
