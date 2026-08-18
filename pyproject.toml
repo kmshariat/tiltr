@@ -1,6 +1,6 @@
 [project]
 name = "tiltr"
-version = "0.2.0"
+version = "0.2.1"
 description = "TEPCat obliquity plotter"
 readme = "README.md"
 license = "MIT"

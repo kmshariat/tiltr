@@ -10,22 +10,37 @@ pip install tiltr
 Plots the sky-projected spin-orbit angle and the true spin-orbit angle of an exoplanet. Data taken from TEPCat. Currently, the package supports plotting with respect to the effective temperature (K), the semi-major axis (AU), and the period of the planet (days). The plot for the effective temperature takes an additional, optional argument `kraft` to plot the Kraft Break. 
 
 ```
-from tiltr import TEPCatPlotter
+import tiltr 
 
-tp = TEPCatPlotter() 
+highlights = [
+    {
+        'lambda': -62.3,
+        'lambda_err_1': -10,
+        'lambda_err_2': 10,
+        'Teff': 6200,
+        'marker': '*',
+        'color': 'red',
+        'markersize': 15,
+        'label': 'Everybody et al. (2024)'
+    },
+    {
+        'lambda': 45.0,
+        'lambda_err_1': -5,
+        'lambda_err_2': 5,
+        'Teff': 6200,
+        'marker': 's',
+        'color': 'blue',
+        'markersize': 10,
+        'label': 'Nobody et al. (2009)'
+    }
+]
 
-# projected spin-orbit angle
-tp.plot_lambda_vs_teff(highlight="TOI-1842", save_path='lambda_vs_teff.pdf', show=True, kraft=6050)  
-tp.plot_lambda_vs_a(log_scale=True, highlight="TOI-1842", save_path='lambda_vs_a.png', show=True)
-tp.plot_lambda_vs_period(highlight="TOI-1842", save_path='lambda_vs_period.svg', show=True)         
-
-# true spin-orbit angle
-tp.plot_psi_vs_teff(highlight="TOI-1842", save_path='psi_vs_teff.pdf', kraft=6050, show=True)
-tp.plot_psi_vs_a(log_scale=True, highlight="TOI-1842", save_path='psi_vs_a.png', show=True)
-tp.plot_psi_vs_period(highlight="TOI-1842", save_path='psi_vs_period.jpg', show=True)
-
-# all combined
-tp.plot_grid(log_scale_a=True, highlight="TOI-1842", save_path="obliquity_grid.pdf")
+tiltr.lambda_T(highlight=highlights, Kraft_Break=6260, save_as='lambda_teff.png')
+tiltr.lambda_a(save_as='lambda_a.png')
+tiltr.lambda_M(save_as='lambda_M.png')
+tiltr.psi_T(save_as='psi_T.png')
+tiltr.psi_a(save_as='psi_a.png')
+tiltr.psi_M(save_as='psi_mass.png')
 ```
 
 ## Reference
